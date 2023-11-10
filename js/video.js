@@ -13,10 +13,6 @@ window.addEventListener("load", function() {
 		console.log("play the video");
 	});
 
-    document.getElementById("slider").addEventListener("input", function() {
-        video.volume = document.getElementById("slider").value / 100;
-        document.getElementById("volume").textContent = document.getElementById("slider").value + "%";
-    });
 
 	document.querySelector("#pause").addEventListener("click", function() {
 		video.pause();
@@ -65,7 +61,10 @@ window.addEventListener("load", function() {
 		video.volume = this.value / 100;
 		document.querySelector("#volume").innerHTML = this.value + "%";
 		console.log("change the volume to " + video.volume);
+		console.log("change the volume to " + this.value + "%");
 	});
+
+
 
 	document.querySelector("#vintage").addEventListener("click", function() {
 		video.classList.add("oldSchool");
