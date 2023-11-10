@@ -13,6 +13,13 @@ window.addEventListener("load", function() {
 		console.log("play the video");
 	});
 
+	var volumeSlider = document.getElementById("slider");
+    var volumeInfo = document.getElementById("volume");
+    volumeSlider.addEventListener("input", function() {
+        video.volume = volumeSlider.value / 100;
+        volumeInfo.textContent = volumeSlider.value + "%";
+    });
+
 	document.querySelector("#pause").addEventListener("click", function() {
 		video.pause();
 		console.log("pause the video");
