@@ -17,7 +17,6 @@ window.addEventListener("load", function() {
             video.volume = volumeSlider.value / 100;
             volumeInfo.textContent = volumeSlider.value + "%";
             console.log("change the volume to " + volumeSlider.value + "%");
-		video.addEventListener("volumechange", updateVolume);
         });
 	});
 
