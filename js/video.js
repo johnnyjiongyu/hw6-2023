@@ -11,6 +11,13 @@ window.addEventListener("load", function() {
 	document.querySelector("#play").addEventListener("click", function() {
 		video.play();
 		console.log("play the video");
+        var volumeSlider = document.querySelector("#slider");
+        var volumeInfo = document.querySelector("#volume");
+        volumeSlider.addEventListener("input", function() {
+            video.volume = volumeSlider.value / 100;
+            volumeInfo.textContent = volumeSlider.value + "%";
+            console.log("change the volume to " + video.volume);
+        });
 	});
 
 
@@ -63,8 +70,6 @@ window.addEventListener("load", function() {
 		console.log("change the volume to " + video.volume);
 		console.log("change the volume to " + this.value + "%");
 	});
-
-
 
 	document.querySelector("#vintage").addEventListener("click", function() {
 		video.classList.add("oldSchool");
