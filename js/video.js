@@ -25,9 +25,12 @@ window.addEventListener("load", function() {
 		console.log("slow down the video to " + video.playbackRate);
 	});
 
+
 	document.querySelector("#faster").addEventListener("click", function() {
-		video.playbackRate += (0.1 * video.slowDownCount);
-		console.log("speed up the video to " + video.playbackRate);
+		if (slowDownCount > 0) {
+			video.playbackRate += 0.1
+			console.log("speed up the video to " + video.playbackRate);
+		}
 	});
 
 	document.querySelector("#skip").addEventListener("click", function() {
