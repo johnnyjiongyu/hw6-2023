@@ -13,11 +13,9 @@ window.addEventListener("load", function() {
 		console.log("play the video");
 	});
 
-	var volumeSlider = document.getElementById("slider");
-    var volumeInfo = document.getElementById("volume");
-    volumeSlider.addEventListener("input", function() {
-        video.volume = volumeSlider.value / 100;
-        volumeInfo.textContent = volumeSlider.value + "%";
+    document.getElementById("slider").addEventListener("input", function() {
+        video.volume = document.getElementById("slider").value / 100;
+        document.getElementById("volume").textContent = document.getElementById("slider").value + "%";
     });
 
 	document.querySelector("#pause").addEventListener("click", function() {
