@@ -18,6 +18,7 @@ window.addEventListener("load", function() {
 		console.log("pause the video");
 	});
 
+	var slowDownCount = 0;
 	document.querySelector("#slower").addEventListener("click", function() {
 		video.playbackRate -= 0.1;
 		slowDownCount++;
