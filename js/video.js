@@ -8,11 +8,15 @@ window.addEventListener("load", function() {
 	console.log("auto play is set to " + video.autoplay);
 	console.log("loop is set to " + video.loop);
 
+	video.addEventListener("volume", function() {
+		document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
+		console.log("volume is " + video.volume * 100 + "%");
+	});
+
 	document.querySelector("#play").addEventListener("click", function() {
 		video.play();
 		console.log("play the video");
 	});
-
 
 	document.querySelector("#pause").addEventListener("click", function() {
 		video.pause();
@@ -25,7 +29,6 @@ window.addEventListener("load", function() {
 		slowDownCount++;
 		console.log("slow down the video to " + video.playbackRate);
 	});
-
 
 	document.querySelector("#faster").addEventListener("click", function() {
 		if (slowDownCount > 0) {
