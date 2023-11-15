@@ -8,6 +8,9 @@ window.addEventListener("load", function() {
 	console.log("auto play is set to " + video.autoplay);
 	console.log("loop is set to " + video.loop);
 
+	var display = document.querySelector("#volume");
+	display.innerHTML = video.volume * 100 + "%";
+
 	video.addEventListener("volume", function() {
 		document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 		console.log("volume is " + video.volume * 100 + "%");
