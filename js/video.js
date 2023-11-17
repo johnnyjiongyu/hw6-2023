@@ -8,17 +8,14 @@ window.addEventListener("load", function() {
 	console.log("auto play is set to " + video.autoplay);
 	console.log("loop is set to " + video.loop);
 
-	var display = document.querySelector("#volume");
-	display.innerHTML = video.volume * 100 + "%";
 
-	video.addEventListener("volume", function() {
-		document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
-		console.log("volume is " + video.volume * 100 + "%");
-	});
 
 	document.querySelector("#play").addEventListener("click", function() {
 		video.play();
 		console.log("play the video");
+		var volumechange = document.querySelector("#volume");
+        var volume = video.volume * 100;
+        volumechange.textContent = volume + "%";
 	});
 
 	document.querySelector("#pause").addEventListener("click", function() {
